@@ -1,17 +1,19 @@
 import './App.scss';
 import KonvaCheck from "./KonvaCheck";
 import Kanvas from "./components/Kanvas";
+import {MantineProvider} from "@mantine/core";
 
 function App() {
 
     const components = [
         {
-            x:350,
+            x:370,
             y:100,
             name: "AR_15_ROOT",
             width:3000,
             image: "https://line-f.ru//i/weapon/ar-15_16_base_DFopAAN.png",
             target: "ROOT",
+            type: "GUN",
             visible:true
         },
         {
@@ -21,7 +23,8 @@ function App() {
             width:500,
             image: "https://line-f.ru//i/part/ar_pistolgrip_iWaahlu.png",
             target: "AR_15_ROOT",
-            visible:false
+            type: "PISTOL_GRIP",
+            visible:true
         },
         {
             x:-342,
@@ -30,6 +33,7 @@ function App() {
             width:500,
             image: "https://line-f.ru//i/part/ar-15_middle_handguard_zTSZkYv.png",
             target: "AR_15_ROOT",
+            type: "HANDGUARD",
             visible:true
         },
         {
@@ -39,6 +43,7 @@ function App() {
             width:500,
             image: "https://line-f.ru//i/part/ar_gasblock_N516v7K.png",
             target: "AR_15_ROOT",
+            type: "GAS_BLOCK",
             visible:true
         },
         {
@@ -48,6 +53,7 @@ function App() {
             width:500,
             image: "https://line-f.ru///i/part/ar_dtk_1GRVztw.png",
             target: "AR_15_ROOT",
+            type: "DTK",
             visible:true
         },
         {
@@ -57,6 +63,7 @@ function App() {
             width:500,
             image: "https://line-f.ru///i/part/ar_mag_VLMHvIm.png",
             target: "AR_15_ROOT",
+            type: "MAG",
             visible:true
         },
         {
@@ -66,6 +73,7 @@ function App() {
             width:500,
             image: "https://line-f.ru//i/part/ar_charginghandle_MwtsIXB.png",
             target: "AR_15_ROOT",
+            type: "CHARGING_HANDLE",
             visible:true
         },
         {
@@ -75,6 +83,7 @@ function App() {
             width:500,
             image: "https://line-f.ru//i/part/ar_handlecarry_KWf0ags.png",
             target: "AR_15_ROOT",
+            type: "SCOPE",
             visible:true
         },
         {
@@ -84,15 +93,17 @@ function App() {
             width:500,
             image: "https://line-f.ru//i/part/ar_buffertube_XXdqgHx.png",
             target: "AR_15_ROOT",
+            type: "TUBE",
             visible:true
         },
         {
-            x:317,
+            x:307,
             y:-145,
             name: "AR_15_STOCK",
             width:500,
             image: "https://line-f.ru//i/part/ar_stock_rPaB1XY.png",
             target: "AR_15_TUBE",
+            type: "STOCK",
             visible:true
         },
         {
@@ -102,14 +113,25 @@ function App() {
             width:500,
             image: "https://line-f.ru//i/part/1_VjqeULE.png",
             target: "AR_15_ROOT",
-            visible:true
+            type: "PISTOL_GRIP",
+            visible:false
+        },
+        {
+            x:38,
+            y:-136,
+            name: "AR_15_DGL_GRIP",
+            width:500,
+            image: "https://line-f.ru//i/part/1_v4Nl9eZ.png",
+            target: "AR_15_ROOT",
+            type: "PISTOL_GRIP",
+            visible:false
         }
     ];
 
   return (
-      <div>
+      <MantineProvider withGlobalStyles withNormalizeCSS>
         <Kanvas components={components}/>
-      </div>
+      </MantineProvider>
   )
 }
 
